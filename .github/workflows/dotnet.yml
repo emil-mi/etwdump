@@ -37,4 +37,4 @@ jobs:
         tag_name: v0.0.1
         make_latest: true
         fail_on_unmatched_files: true
-        files: src/etwdump/bin/Release/net8.0/win-x64/native/etwdump.exe
+        files: src/etwdump/bin/Release/net8.0/win-x64/publish/etwdump.exe
