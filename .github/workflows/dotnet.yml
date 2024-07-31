@@ -30,12 +30,11 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Publish
       run: dotnet publish -r win-x64 -c Release
-    - name: List files
-      run: dir -Recurse src
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
         body: "Automatic release on build"
         tag_name: v0.0.1
         make_latest: true
-        files: src\etwdump\bin\Release\net8.0\win-x64\publish\*.exe
+        fail_on_unmatched_files: true
+        files: src/etwdump/bin/Release/net8.0/win-x64/native/etwdump.exe
