@@ -29,7 +29,9 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish -r win-x64 -c Release
+      run: dotnet publish -r win-x64 -c Release --no-restore
+    - name: List files
+      run: dir /s src
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
